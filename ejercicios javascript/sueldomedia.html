@@ -1,0 +1,33 @@
+
+<html>
+<head>
+  <title>DEclarar los sueldos de un empleado y obtener su media</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+	// Los sueldos se declaran en un array
+// ---------------- FUNCIONES --------------------
+function Proceso (tab_sueldos){
+	var suma=0;
+	for(x=1; x < tab_sueldos.length; x++){
+		suma = suma+tab_sueldos[x];
+	}
+	media=suma / (tab_sueldos.length-1);
+	return media;
+}
+function Visualizar (media, tab_sueldos){
+	document.write("La media de: " +tab_sueldos[0] + " es: " + media)
+}
+
+// -----------------PROGRAMA PRINCIPAL----------------
+tab_sueldos= ["Luis", 1000, 2500, 800, 2000, 3000]
+resul=Proceso(tab_sueldos);
+Visualizar (resul, tab_sueldos);
+
+  
+</script>
+
+</body>
+</html>

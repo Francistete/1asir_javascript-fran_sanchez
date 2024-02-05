@@ -1,0 +1,41 @@
+
+<html>
+<head>
+  <title>Guardar en un array nombres y sueldos de varios empleados. Se pide la media y nombre de cada de los empleados </title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+	// Los sueldos se declaran en un array
+// ---------------- FUNCIONES --------------------
+function Media (tab_sueldos){
+	var suma=0;
+	for(x=1; x < tab_sueldos.length; x++){
+		suma = suma+tab_sueldos[x];
+	}
+	media=suma / (tab_sueldos.length-1);
+	return media;
+}
+function Visualizar (mat_sueldos){
+	for(x in mat_sueldos){
+		med=Media(mat_sueldos[x]);
+		alert("La media de: " + mat_sueldos[x][0] + "es: " +med);
+	}
+
+}
+
+// -----------------PROGRAMA PRINCIPAL----------------
+tab_sueldos= [
+	 ["Luis", 1000, 2500, 800, 2000, 9000],
+	 ["Ana", 2000, 7500, 800, 2000, 1000],
+	 ["Pepe", 3000, 1500, 500, 8000, 1000],
+	 {"Lucia", 4000, 2500, 800, 2000, 5000]
+	];
+Visualizar (mat_sueldos);
+
+  
+</script>
+
+</body>
+</html>
