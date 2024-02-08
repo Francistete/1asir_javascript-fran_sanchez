@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<h2>Almacena los sueldos de varios empleados junto con sus nombres, mediante objetos json</h2>
+
+<p id="empresa"></p>
+<script>
+const empleados = [
+    { nombre: "Juan", sueldo: 2500 },
+    { nombre: "María", sueldo: 2800 },
+    { nombre: "Carlos", sueldo: 3000 },
+    { nombre: "Laura", sueldo: 2700 }
+];
+
+
+// Voy a mostrar aqui la información de cada empleado
+for (var i = 0; i < empleados.length; i++) {
+    document.getElementById("empresa").innerHTML ="Nombre: " + empleados[i].nombre + ", Sueldo: " + empleados[i].sueldo;
+}
+</script>
+</body>
+</html>
