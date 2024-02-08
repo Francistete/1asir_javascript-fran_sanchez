@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<h2>Guardar en un objeto JSON los datos de un alumno de primero de superior. Visualizarlo mediante Javascript. Guardar en un obj JSON dos alumnos</h2>
+
+<p id="demo"></p>
+
+
+<script>
+const txt = '[{"nombre":"Fran", "edad":22, "ciudad":"Jerez de la Fra."},{"nombre":"Jimmyloty", "edad":20, "ciudad":"chiclana"}]'
+const obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj[0].nombre + ", " + obj[0].edad + ", " + obj[0].ciudad;
+
+</script>
+
+</body>
+</html>
