@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<h2>Almacenamos en un array los nombres con las notas de varios alumnos y se pide los nombres sin ningun suspenso</h2>
+
+
+
+<script>
+const alumnos = [
+    { nombre: "Jimmy", notas: [3, 7, 5, 1, 0] },
+    { nombre: "María", notas: [3, 0, 3, 9, 6] },
+    { nombre: "Carlos", notas: [5, 10, 10, 7, 9] },
+    { nombre: "Laura", notas: [7, 7, 5, 1, 4] }
+];
+
+
+// Voy a mostrar los alumnos
+document.write('<h2> ALUMNOS: </h2>');
+for (var i = 0; i < alumnos.length; i++) {
+    	document.write("Nombre: " + alumnos[i].nombre + ", Notas: " + alumnos[i].notas + '<br>');
+}
+
+function mostrarAlumnosAprobados(alumnos) {
+    const alumnosAprobados = [];
+    for (let i = 0; i < alumnos.length; i++) {
+        const alumno = alumnos[i];
+        const notas = alumno.notas;
+        let todasAprobadas = true;
+        for (let j = 0; j < notas.length; j++) {
+            if (notas[j] < 5) {
+                todasAprobadas = false;
+                break;
+            }
+        }
+        if (todasAprobadas) {
+            alumnosAprobados.push(alumno);
+        }
+    }
+    return alumnosAprobados;
+}
+
+// Voy a mostrar los alumnos aprobados ahora
+document.write('<h2> ALUMNOS APROBADOS: </h2>');
+const alumnosAprobados = mostrarAlumnosAprobados(alumnos);
+for (let i = 0; i < alumnosAprobados.length; i++) {
+    document.write("Nombre: " + alumnosAprobados[i].nombre + ", Notas: " + alumnosAprobados[i].notas + "<br>");
+}
+</script>
+</body>
+</html>
