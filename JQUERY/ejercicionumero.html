@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>   
+const numerosecreto = parseInt(prompt("Introduce el número secreto con el que quieres jugar:"));
+let intentos = 0;
+let adivinado = false;
+
+while (adivinado == false) {
+    
+    let numero = parseInt(prompt("Adivina el número secreto: "));
+
+    if (numero === numerosecreto) {
+        adivinado = true;
+        alert(`¡Felicidades! Adivinaste el número secreto en ${intentos} intentos.`);
+    } else if (numero < numerosecreto) {
+        alert("El número secreto es mayor.");
+    } else {
+        alert("El número secreto es menor.");
+    }
+    intentos++;
+}
+</script>
+
+</body>
+</html>

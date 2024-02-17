@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Notas: 6, 4, 8, 3, 7, 2, 9, 5</h2>
+<p>Seleccione una opción:</p>
+<button id="botonAprobados">Aprobados</button>
+<button id="botonSuspensos">Suspensos</button>
+<ul id="listaNotas"></ul>
+
+<script>
+$(document).ready(function(){
+  var notas = [6, 4, 8, 3, 7, 2, 9, 5];
+  
+  function mostrarAprobados() {
+    $("#listaNotas").empty(); 
+    notas.forEach(function(nota) {
+      if (nota >= 5) {
+        $("#listaNotas").append("<li>" + nota + "</li>");
+      }
+    });
+  }
+  
+  function mostrarSuspensos() {
+    $("#listaNotas").empty(); 
+    notas.forEach(function(nota) {
+      if (nota < 5) {
+        $("#listaNotas").append("<li>" + nota + "</li>");
+      }
+    });
+  }
+  
+  $("#botonAprobados").click(function(){
+    mostrarAprobados();
+  });
+  
+  $("#botonSuspensos").click(function(){
+    mostrarSuspensos();
+  });
+});
+</script>
+
+</body>
+</html>
