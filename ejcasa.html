@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EJ 1</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>  
+/* 
+	Visualizar si se encuentra si o no ascendentemente ordenado
+*/
+let lista = [2, 6, 8, 4, 1, 10, 55, 9, 23, 213];
+
+
+function Ordenado(lista){
+	let mayor=-9999999;
+	for(i=0; i<lista.length; i++){
+		if(lista[i]>mayor){
+			mayor=lista[i];
+		}
+	}
+	return mayor;
+}
+
+
+function Visualizar(mayor){
+	document.write("El numero es: " + mayor);
+}
+
+resul = Mayor(lista);
+Visualizar(resul);
+</script>
+
+</body>
+</html>
