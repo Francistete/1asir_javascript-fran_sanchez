@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EJ 1</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>  
+/* 
+	Transladar todos los valores una posición a la izquierda, excepto el primero que pasa a la última posición
+*/
+let lista = [2, 6, 8, 4, 1, 10, 55, 9, 23, 213];
+
+function MoverIzquierda(lista) {
+    let aux = lista[0];
+    for (let i = 0; i < lista.length - 1; i++) {
+        lista[i] = lista[i + 1];
+    }
+    lista[lista.length - 1] = aux;
+    return lista;
+}
+
+function Visualizar(lista) {
+    document.write(lista);
+}
+
+let resul = MoverIzquierda(lista);
+Visualizar(resul);
+
+</script>
+
+</body>
+</html>
