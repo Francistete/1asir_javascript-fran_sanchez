@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EJ 1</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>  
+/* 
+	Declarar un array con valor numerico y se pide por teclado un valor y a continuación, visualizar si se encuentra en el array 
+*/
+let lista = [2, 6, 8, 4, 1, 10, 55, 9, 23, 213];
+
+const numero = parseInt(prompt("Introduce el número:"));
+
+function Proceso (lista, numero){
+let sw = false;
+for (i=0; i < lista.length; i++){
+	if(lista[i]==numero){
+		sw=true;
+		break;
+	}
+}
+return sw;
+}
+function Visualizar(dato){
+	let intentos=0;
+	while(intentos<3){
+		if (dato==true){
+			alert("Encontrado");
+			break;
+		}
+		else{
+			alert("No encontrado");
+			intentos++;
+		}
+}
+}
+
+
+
+
+resul = Proceso(lista, numero);
+Visualizar(resul);
+</script>
+
+</body>
+</html>
