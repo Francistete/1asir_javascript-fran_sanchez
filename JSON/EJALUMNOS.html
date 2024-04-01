@@ -43,25 +43,24 @@ function obtenerAlumnosConMasDeDosSuspensos(alumnos) {
     return masDeDosSuspensos;
 }
 
-function visualizar(resultados, titulo) {
-    document.write("<h2>" + titulo + "</h2>");
-    for (let i = 0; i < resultados.length; i++) {
-        if (typeof resultados[i] == 'object') {
-            document.write(resultados[i].nombre + ": " + resultados[i].notaMedia + "<br>");
-        } else {
-            document.write(resultados[i] + "<br>");
-        }
-    }
-}
-
 const obj = JSON.parse(text);
 
 calcularNotaMedia(obj.alumno);
 
-visualizar(obtenerAlumnosSuspendidos(obj.alumno), "Alumnos con nota media suspensa:");
-visualizar(obtenerAlumnosConMasDeDosSuspensos(obj.alumno), "Alumnos con más de dos suspensos:");
+document.write("<h2>Alumnos con nota media suspensa:</h2>");
+let suspendidos = obtenerAlumnosSuspendidos(obj.alumno);
+for (let i = 0; i < suspendidos.length; i++) {
+    document.write(suspendidos[i].nombre + ": " + suspendidos[i].notaMedia + "<br>");
+}
+
+document.write("<h2>Alumnos con más de dos suspensos:</h2>");
+let masDeDosSuspensos = obtenerAlumnosConMasDeDosSuspensos(obj.alumno);
+for (let i = 0; i < masDeDosSuspensos.length; i++) {
+    document.write(masDeDosSuspensos[i] + "<br>");
+}
 
 </script>
 
 </body>
 </html>
+
