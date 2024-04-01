@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<script>
+let text = '{"alumno":[{"nombre": "Luis Ortiz", "Nota1": 6, "Nota2": 4, "Nota3": 7, "Nota4": 6, "Nota5": 7}, {"nombre": "Ana Torres", "Nota1": 7, "Nota2": 5, "Nota3": 5, "Nota4": 8, "Nota5": 9}, {"nombre": "Roberto Martinez", "Nota1": 3, "Nota2": 2, "Nota3": 4, "Nota4": 4, "Nota5": 6}, {"nombre": "Laura Moreno", "Nota1": 5, "Nota2": 4, "Nota3": 3, "Nota4": 4, "Nota5": 8}]}';
+
+function calcularNotaMedia(alumnos) {
+    for (let i = 0; i < alumnos.length; i++) {
+        let suma = 0;
+        for (let j = 1; j <= 5; j++) {
+            suma += alumnos[i]["Nota" + j];
+        }
+        alumnos[i]["notaMedia"] = suma / 5;
+    }
+}
+
+function obtenerAlumnosSuspendidos(alumnos) {
+    let suspendidos = [];
+    for (let i = 0; i < alumnos.length; i++) {
+        if (alumnos[i]["notaMedia"] < 5) {
+            suspendidos.push(alumnos[i]);
+        }
+    }
+    return suspendidos;
+}
+
+function obtenerAlumnosConMasDeDosSuspensos(alumnos) {
+    let masDeDosSuspensos = [];
+    for (let i = 0; i < alumnos.length; i++) {
+        let suspendidas = 0;
+        for (let j = 1; j <= 5; j++) {
+            if (alumnos[i]["Nota" + j] < 5) {
+                suspendidas++;
+            }
+        }
+        if (suspendidas > 2) {
+            masDeDosSuspensos.push(alumnos[i].nombre);
+        }
+    }
+    return masDeDosSuspensos;
+}
+
+const obj = JSON.parse(text);
+
+calcularNotaMedia(obj.alumno);
+
+document.write("<h2>Alumnos con nota media suspensa:</h2>");
+let suspendidos = obtenerAlumnosSuspendidos(obj.alumno);
+for (let i = 0; i < suspendidos.length; i++) {
+    document.write(suspendidos[i].nombre + ": " + suspendidos[i].notaMedia + "<br>");
+}
+
+document.write("<h2>Alumnos con más de dos suspensos:</h2>");
+let masDeDosSuspensos = obtenerAlumnosConMasDeDosSuspensos(obj.alumno);
+for (let i = 0; i < masDeDosSuspensos.length; i++) {
+    document.write(masDeDosSuspensos[i] + "<br>");
+}
+
+</script>
+
+</body>
+</html>
+
